@@ -4,8 +4,8 @@
 
 How does your application know what view to render to users? This is where routing comes in. As a framework, Rails has a comprehensive routing system for both dynamic and static pages. Below are the differences between a static and dynamic route:
 
-* **Static route** - A static route will render a view that does not change. Typically, you will not send parameters to it. Examples would be a site's about or contact pages.
-* **Dynamic route** - Dynamic routes are pages that accept parameters and render different content based on those parameters. An example would be a blog's post page that contains a specific article.
+- **Static route** - A static route will render a view that does not change. Typically, you will not send parameters to it. Examples would be a site's about or contact pages.
+- **Dynamic route** - Dynamic routes are pages that accept parameters and render different content based on those parameters. An example would be a blog's post page that contains a specific article.
 
 In this lesson we're going to specifically cover static pages to ensure that you can get a firm understanding of how routing works in a Rails application.
 
@@ -26,15 +26,15 @@ Now draw the route by opening the `config/routes.rb` file and adding the followi
 
 ```ruby
 get 'about', to: 'static#about'
-````
+```
 
 Let's look at the components that make up this route code:
 
-* The HTTP verb - in this case we're using the `get` HTTP verb.
+- The HTTP verb - in this case we're using the `get` HTTP verb.
 
-* The path - `'about'` represents the path in the URL bar that the route will be mapped to.
+- The path - `'about'` represents the path in the URL bar that the route will be mapped to.
 
-* The controller action - `'static#about'` tells the Rails routing system that this route should be passed through the `static` controller's `about` action. If the term `action` sounds foreign, actions are just Ruby speak for a method in a controller. So in the `StaticController` will be a method called `about` that gets called when a user goes to `/about`.
+- The controller action - `'static#about'` tells the Rails routing system that this route should be passed through the `static` controller's `about` action. If the term `action` sounds foreign, actions are just Ruby speak for a method in a controller. So in the `StaticController` will be a method called `about` that gets called when a user goes to `/about`.
 
 Now start the Rails server back up, go back to `localhost:3000/about`, and click refresh. You should now see that the error message has changed. It's no longer complaining about not having a route; it should now say: `uninitialized constant StaticController`.
 
@@ -62,8 +62,8 @@ Hitting refresh in the browser will give you a 'Template is missing' error; spec
 
 We're very close to getting our view to show up. Rails gives us two options for how views are mapped between the controller and view files. It's important to understand the difference between explicit and implicit rendering for the views:
 
-* **Explicit rendering** - for explicit rendering, Rails lets you dictate which view file you want to have the controller action mapped to.
-* **Implicit rendering** - for implicit rendering, Rails follows a standard convention that automatically looks for the view file with the same name as the controller action.
+- **Explicit rendering** - for explicit rendering, Rails lets you dictate which view file you want to have the controller action mapped to.
+- **Implicit rendering** - for implicit rendering, Rails follows a standard convention that automatically looks for the view file with the same name as the controller action.
 
 First, let's try out explicit rendering. Create a new directory within the views directory called `static`, and create a new file called `some_page.html.erb`. In that file add some basic HTML code, such as:
 
@@ -108,7 +108,7 @@ If you receive this error:
 
 `Could not find an executable ["phantomjs"] on your path.`
 
-You'll need to install PhantomJS on your computer before the tests will work. 
+You'll need to install PhantomJS on your computer before the tests will work.
 
 For Mac users, run the following:
 
@@ -123,6 +123,5 @@ npm install -g phantomjs-prebuilt
 ```
 
 You can confirm the installation has worked by running `phantomjs -v`.
-
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/rails-static-request-readme'>Rails Static Request</a> on Learn.co and start learning to code for free.</p>
